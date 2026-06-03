@@ -2,46 +2,99 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="About" description="About The AI Duet — field notes and services from the intersection of Chinese AI and global markets.">
+<Base title="About" description="About The AI Duet and Ellen — field notes from the intersection of Chinese AI and global markets, based in Singapore.">
   <section class="page">
     <div class="page-inner">
       <h1 class="page-title">About</h1>
 
       <div class="prose">
         <p>
-          <strong>The AI Duet</strong> is a publication, podcast, and services studio focused on
-          Chinese AI companies going global. Based in Singapore — at the crossroads of China
-          and the rest of the world — it captures the stories, strategies, and hard-won lessons
-          of founders navigating the space between two ecosystems.
+          <strong>The AI Duet</strong> is a content platform at the intersection of Chinese AI
+          and global markets.
         </p>
 
         <p>
-          The name reflects what this work is: a duet between two worlds. Chinese founders
-          building for global markets. Local ecosystems adapting to new players. The conversation
-          between what works in China and what works everywhere else.
-        </p>
-
-        <h2>Who's behind this</h2>
-
-        <p>
-          I'm Ellen — an entrepreneur, writer, and connector based in Singapore. My work sits
-          at the intersection of AI, go-to-market strategy, and the China–global corridor.
+          It started with a simple observation: Singapore is where Chinese AI founders land
+          first when going global — and increasingly, where American AI companies enter Asia.
+          Both sides are curious about each other. Both need to understand how the other
+          ecosystem works. But there's no good English-language source for the Chinese side
+          of this story.
         </p>
 
         <p>
-          I run <a href="https://flos.global" target="_blank" rel="noopener">Flos</a> (AI GTM consulting
-          and marketplace), co-run <strong>Semmering</strong> (investment banking advisory for AI startups),
-          and produce <strong>离线时间</strong>, a Chinese-language podcast featuring in-depth
-          conversations with AI founders building globally.
+          The AI Duet fills that gap. The content comes from real conversations with founders
+          on the ground — their strategies, their mistakes, their firsthand experience
+          navigating between worlds.
+        </p>
+
+        <h2>About Ellen</h2>
+
+        <p>
+          I focus on AI entrepreneurship and going global. I cold-started a global Chinese
+          social app, and now I work with AI entrepreneurs who have global vision and markets.
         </p>
 
         <p>
-          Previously, I ran a USD-denominated VC fund in Beijing, was an early TEDx China
-          ambassador, and studied International Relations and Economics at Peking University.
-          I've spent a decade watching Chinese technology companies figure out how to go global —
-          The AI Duet is where I share what I've learned.
+          I produce <strong>离线时间</strong>, a Chinese-language podcast where I sit down with
+          Chinese AI founders in Singapore and dig into their frontline experience — how they
+          build, how they think about markets, and what they've learned the hard way. The AI
+          Duet is the English window into those conversations and the broader ecosystem I
+          observe every day.
         </p>
 
+        <p>
+          Beyond content, I offer two services for AI entrepreneurs with global ambitions:
+          <a href="/services">fundraising advisory</a> and landing events with growth consulting.
+        </p>
+
+        <h2>离线时间 — The Chinese Podcast</h2>
+
+        <p>
+          The AI Duet originates from 离线时间, a weekly Chinese-language podcast featuring
+          in-depth conversations with AI founders building globally from Singapore.
+          Find it on:
+        </p>
+      </div>
+
+      <div class="channels">
+        <a href="https://www.xiaoyuzhoufm.com/podcast/69c0a6b7d3dbdb2f6aad35cb" target="_blank" rel="noopener" class="channel-card">
+          <div class="channel-icon">🎙</div>
+          <div class="channel-info">
+            <h3>小宇宙 Xiaoyuzhou</h3>
+            <p>Primary podcast home</p>
+          </div>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a href="https://podcasts.apple.com/sg/podcast/%E7%A6%BB%E7%BA%BF%E6%97%B6%E9%97%B4/id1886676611" target="_blank" rel="noopener" class="channel-card">
+          <div class="channel-icon">🍎</div>
+          <div class="channel-info">
+            <h3>Apple Podcasts</h3>
+            <p>Subscribe on Apple</p>
+          </div>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a href="https://open.spotify.com/show/5ioH28qEbvMZYWD77rcKnL" target="_blank" rel="noopener" class="channel-card">
+          <div class="channel-icon">🎧</div>
+          <div class="channel-info">
+            <h3>Spotify</h3>
+            <p>Listen on Spotify</p>
+          </div>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a href="https://www.xiaohongshu.com/user/profile/56a57315e4251d3524570a58" target="_blank" rel="noopener" class="channel-card">
+          <div class="channel-icon">📕</div>
+          <div class="channel-info">
+            <h3>小红书 Xiaohongshu</h3>
+            <p>Bite-sized insights and updates</p>
+          </div>
+          <span class="channel-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="prose" style="margin-top: 48px;">
         <h2>Get in touch</h2>
 
         <p>
@@ -69,6 +122,25 @@ import Base from '../layouts/Base.astro';
   }
   .prose :global(a) { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
   .prose :global(strong) { font-weight: 600; color: var(--color-text); }
+
+  .channels { margin-top: 24px; }
+  .channel-card {
+    display: flex; align-items: center; gap: 20px;
+    padding: 20px 0; border-top: 1px solid var(--color-border);
+    color: var(--color-text); text-decoration: none;
+  }
+  .channel-card:last-child { border-bottom: 1px solid var(--color-border); }
+  .channel-card:hover { opacity: 1; }
+  .channel-card:hover .channel-arrow { transform: translateX(4px); color: var(--color-accent); }
+  .channel-icon { font-size: 20px; flex-shrink: 0; width: 32px; text-align: center; }
+  .channel-info { flex: 1; }
+  .channel-info h3 { font-size: 16px; font-weight: 600; }
+  .channel-info p { margin-top: 2px; font-size: 13px; color: var(--color-text-secondary); }
+  .channel-arrow {
+    font-size: 16px; color: var(--color-text-secondary); flex-shrink: 0;
+    transition: transform 0.2s, color 0.2s;
+  }
+
   @media (max-width: 768px) {
     .page { padding: 48px 20px; }
     .page-title { font-size: 32px; }
