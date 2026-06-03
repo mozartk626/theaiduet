@@ -1,63 +1,57 @@
-# Astro Starter Kit: Blog
+# The AI Duet — theaiduet.com
 
-```sh
-npm create astro@latest -- --template blog
+Astro static site. Deploys to Cloudflare Pages.
+
+## Quick Start
+
+```bash
+npm install
+npm run dev      # localhost:4321
+npm run build    # builds to ./dist
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Publishing a New Article
 
-Features:
+Create a `.md` file in `src/content/posts/`:
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+```markdown
+---
+title: "Your Article Title"
+description: "One-sentence summary for SEO and previews."
+date: 2026-06-03
+tags: ["founders", "strategy"]
+episode: "https://www.xiaoyuzhoufm.com/episode/ID"  # optional, for podcast eps
+episodeNumber: "EP08"  # optional
+titleZh: "中文标题"  # optional
+draft: false  # set true to hide from site
+---
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+Your article content in Markdown.
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Commit → push → Cloudflare auto-deploys. Done.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Site Structure
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+```
+/                → Homepage (hero + all articles + services preview)
+/posts           → All Field Notes listing
+/posts/[slug]    → Individual article (auto-generated from markdown)
+/services        → Consulting services page
+/about           → About The AI Duet and Ellen
+/chinese         → Gateway to Chinese content (小宇宙, 微信, 小红书)
+/rss.xml         → RSS feed
+/sitemap-index.xml → Sitemap
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Content Status
 
-## 🧞 Commands
+3 articles fully migrated: egg trader, EDB, maritime/ShipLinker.
+9 articles/episodes as draft stubs — set `draft: false` and add content when ready.
 
-All commands are run from the root of the project, from a terminal:
+## Before Going Live
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+1. Update social/podcast links in `src/pages/chinese.astro`
+2. Set up email: ellen@theaiduet.com (Cloudflare Email Routing)
+3. Cloudflare Pages: connect GitHub repo, build command `npm run build`, output `dist`, set `NODE_VERSION=22`
+4. Add custom domain theaiduet.com in Cloudflare Pages settings
