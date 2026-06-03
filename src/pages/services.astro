@@ -1,0 +1,242 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Services" description="Consulting, events, and ecosystem access for Chinese AI companies landing in Singapore and going global.">
+  <section class="services-hero">
+    <div class="hero-inner">
+      <div class="label">Services</div>
+      <h1>Your first call<br>in Singapore</h1>
+      <p class="hero-desc">
+        If you're a Chinese AI company thinking about going global — and Singapore
+        is on your list — I can help you skip the trial-and-error phase. I have
+        direct access to the resources, networks, and institutional knowledge
+        that matter here.
+      </p>
+      <a href="mailto:ellen@theaiduet.com" class="hero-cta">Start a conversation →</a>
+    </div>
+  </section>
+
+  <section class="offerings">
+    <div class="offerings-inner">
+
+      <div class="offering">
+        <div class="offering-number">01</div>
+        <div class="offering-content">
+          <h2>Landing Events</h2>
+          <p>
+            Curated 80–100 person events that introduce your company to Singapore's
+            AI ecosystem — investors, government officials, founders, and press.
+            Not generic networking; designed specifically for your company's positioning
+            and the audience that matters for your next step.
+          </p>
+          <div class="offering-details">
+            <div class="detail">
+              <strong>What you get</strong>
+              <span>Event design, venue, guest curation, on-the-ground execution, and post-event introductions</span>
+            </div>
+            <div class="detail">
+              <strong>Who it's for</strong>
+              <span>AI companies making their first or second move into Singapore and need visibility with the right people</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offering">
+        <div class="offering-number">02</div>
+        <div class="offering-content">
+          <h2>Resource Matching</h2>
+          <p>
+            Direct introductions to EDB, IMDA, SuperAI, local investors, cloud
+            providers (Google Cloud, BytePlus, Vercel), compliance advisors, and
+            ecosystem partners. I connect you to the people who matter — not a
+            directory, but curated, contextual introductions where both sides
+            are prepared.
+          </p>
+          <div class="offering-details">
+            <div class="detail">
+              <strong>What you get</strong>
+              <span>Targeted introductions with context, prep support, and follow-up facilitation</span>
+            </div>
+            <div class="detail">
+              <strong>Who it's for</strong>
+              <span>Founders who need the right doors opened, not more networking events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offering">
+        <div class="offering-number">03</div>
+        <div class="offering-content">
+          <h2>Fundraising Advisory</h2>
+          <p>
+            For companies ready to raise in Singapore and SEA — deal positioning,
+            investor introductions, narrative development, and deck review. I work
+            at the intersection of Chinese AI and international capital, through
+            Semmering, the advisory practice I co-run with my partner.
+          </p>
+          <div class="offering-details">
+            <div class="detail">
+              <strong>What you get</strong>
+              <span>Investor mapping, positioning strategy, materials review, and warm introductions</span>
+            </div>
+            <div class="detail">
+              <strong>Who it's for</strong>
+              <span>AI companies with product-market fit looking to raise from Singapore/SEA-based investors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offering">
+        <div class="offering-number">04</div>
+        <div class="offering-content">
+          <h2>Go-to-Market Consulting</h2>
+          <p>
+            Strategic advisory for Chinese AI companies entering international
+            markets through Singapore. Covers entity structure, hiring strategy,
+            positioning for local market, partnership development, and the
+            operational playbook for going from "China company with a Singapore
+            address" to "Singapore-based global company."
+          </p>
+          <div class="offering-details">
+            <div class="detail">
+              <strong>What you get</strong>
+              <span>Market entry strategy, operational roadmap, and ongoing advisory support</span>
+            </div>
+            <div class="detail">
+              <strong>Who it's for</strong>
+              <span>AI companies serious about making Singapore a real hub, not a mailbox</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="why-me">
+    <div class="why-inner">
+      <h2>Why work with me</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>I'm in the network</h3>
+          <p>I organize events connecting Chinese AI founders with EDB, IRAS/ISCA, Google Cloud, BytePlus, Vercel, and the broader Singapore ecosystem. These aren't cold introductions — they're warm connections built through years of relationship-building.</p>
+        </div>
+        <div class="why-item">
+          <h3>I understand both sides</h3>
+          <p>Peking University educated, Beijing VC fund experience, now based in Singapore. I think in Chinese but operate in English. I know what Chinese founders need and what Singapore institutions expect.</p>
+        </div>
+        <div class="why-item">
+          <h3>I write about what I learn</h3>
+          <p>The AI Duet isn't just marketing — it's how I process and share real ecosystem knowledge. My Field Notes come from actual meetings, actual founder conversations, actual policy briefings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-cta-section">
+    <div class="cta-inner">
+      <h2>Let's talk</h2>
+      <p>Every engagement starts with a conversation. Tell me where you are, where you want to go, and what's in the way.</p>
+      <a href="mailto:ellen@theaiduet.com" class="cta-btn">ellen@theaiduet.com →</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .services-hero {
+    padding: 100px var(--spacing-page) 80px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hero-inner { max-width: var(--prose-width); margin: 0 auto; }
+  .hero-inner .label {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-accent); margin-bottom: 24px;
+  }
+  .services-hero h1 {
+    font-family: var(--font-display); font-size: 52px; font-weight: 400;
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+  }
+  .hero-desc {
+    font-size: 18px; line-height: 1.7; color: var(--color-text-secondary);
+    margin-bottom: 32px;
+  }
+  .hero-cta {
+    display: inline-block; padding: 14px 28px;
+    background: var(--color-text); color: var(--color-bg);
+    font-size: 14px; font-weight: 600; border-radius: 6px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--color-accent); opacity: 1; }
+
+  .offerings { padding: 80px var(--spacing-page); }
+  .offerings-inner { max-width: 900px; margin: 0 auto; }
+  .offering {
+    display: grid; grid-template-columns: 60px 1fr; gap: 24px;
+    padding: 48px 0; border-top: 1px solid var(--color-border);
+  }
+  .offering:last-child { border-bottom: 1px solid var(--color-border); }
+  .offering-number {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+    color: var(--color-accent); padding-top: 4px;
+  }
+  .offering-content h2 {
+    font-family: var(--font-display); font-size: 28px; font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .offering-content > p {
+    font-size: 16px; line-height: 1.8; color: var(--color-text-secondary);
+    margin-bottom: 24px;
+  }
+  .offering-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .detail strong {
+    display: block; font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 4px; color: var(--color-text);
+  }
+  .detail span { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); }
+
+  .why-me {
+    padding: 80px var(--spacing-page);
+    background: var(--color-text); color: white;
+  }
+  .why-inner { max-width: 900px; margin: 0 auto; }
+  .why-me h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 400;
+    margin-bottom: 48px;
+  }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .why-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .why-item p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); }
+
+  .services-cta-section { padding: 80px var(--spacing-page); text-align: center; }
+  .cta-inner { max-width: 480px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .cta-inner p { font-size: 16px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 28px; }
+  .cta-btn {
+    display: inline-block; padding: 14px 28px;
+    border: 1.5px solid var(--color-text); border-radius: 6px;
+    color: var(--color-text); font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .cta-btn:hover { border-color: var(--color-accent); color: var(--color-accent); opacity: 1; }
+
+  @media (max-width: 768px) {
+    .services-hero { padding: 64px 20px 48px; }
+    .services-hero h1 { font-size: 36px; }
+    .offerings { padding: 48px 20px; }
+    .offering { grid-template-columns: 1fr; gap: 8px; }
+    .offering-number { padding-top: 0; }
+    .offering-details { grid-template-columns: 1fr; }
+    .why-me { padding: 60px 20px; }
+    .why-grid { grid-template-columns: 1fr; gap: 32px; }
+    .services-cta-section { padding: 60px 20px; }
+  }
+</style>

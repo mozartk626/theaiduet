@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+}
+---
+
+<Base title="Field Notes" description="Articles and insights about Chinese AI founders and companies going global.">
+  <section class="page">
+    <div class="page-inner">
+      <div class="section-title">Field Notes</div>
+      <h1 class="page-title">All articles</h1>
+      <p class="page-desc">
+        Insights, profiles, and analysis from the Chinese AI ecosystem —
+        founders building for global markets, the strategies they use, and the challenges they face.
+      </p>
+
+      <div class="articles-grid">
+        {posts.map((post) => (
+          <a href={`/posts/${post.id}`} class="article-card">
+            <div>
+              <div class="article-meta">
+                <span class="article-type">
+                  {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Field Note'}
+                </span>
+                <span class="article-date">{formatDate(post.data.date)}</span>
+              </div>
+              <h3>{post.data.title}</h3>
+              {post.data.titleZh && <div class="zh-title">{post.data.titleZh}</div>}
+              <p>{post.data.description}</p>
+            </div>
+            <div class="article-arrow">→</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page { padding: 64px var(--spacing-page) 80px; }
+  .page-inner { max-width: var(--max-width); margin: 0 auto; }
+  .section-title {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-text-secondary); margin-bottom: 12px;
+  }
+  .page-title {
+    font-family: var(--font-display); font-size: 44px; font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .page-desc {
+    font-size: 17px; color: var(--color-text-secondary);
+    max-width: 600px; line-height: 1.7; margin-bottom: 48px;
+  }
+  .articles-grid { display: grid; gap: 0; }
+  .article-card {
+    display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start;
+    padding: 36px 0; border-top: 1px solid var(--color-border);
+    text-decoration: none; color: inherit; transition: background 0.2s;
+  }
+  .article-card:last-child { border-bottom: 1px solid var(--color-border); }
+  .article-card:hover {
+    background: var(--color-accent-light);
+    margin: 0 -16px; padding-left: 16px; padding-right: 16px;
+  }
+  .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .article-type {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent);
+  }
+  .article-date { font-size: 13px; color: var(--color-text-secondary); }
+  .article-card h3 {
+    font-family: var(--font-display); font-size: 26px; font-weight: 400;
+    line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 10px;
+  }
+  .zh-title { font-size: 14px; color: var(--color-text-secondary); margin-top: 4px; margin-bottom: 6px; }
+  .article-card p { font-size: 15px; line-height: 1.6; color: var(--color-text-secondary); max-width: 580px; }
+  .article-arrow {
+    font-size: 20px; color: var(--color-text-secondary); padding-top: 12px;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .article-card:hover .article-arrow { color: var(--color-accent); transform: translateX(4px); }
+  @media (max-width: 768px) {
+    .page { padding: 48px 20px 64px; }
+    .page-title { font-size: 32px; }
+    .article-card { grid-template-columns: 1fr; gap: 0; }
+    .article-card h3 { font-size: 22px; }
+    .article-arrow { display: none; }
+  }
+</style>

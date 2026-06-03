@@ -1,0 +1,132 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  article={true}
+  publishDate={post.data.date}
+>
+  <div class="article-header">
+    <a href="/posts" class="back-link">← Field Notes</a>
+    <span class="article-tag">
+      {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Field Note'}
+      · {formatDate(post.data.date)}
+    </span>
+    <h1>{post.data.title}</h1>
+    {post.data.titleZh && <div class="title-zh">{post.data.titleZh}</div>}
+    <p class="article-desc">{post.data.description}</p>
+    <div class="author-row">
+      <span class="name">Ellen</span> · The AI Duet · {Math.ceil(post.body.split(' ').length / 250)} min read
+    </div>
+  </div>
+
+  <article class="article-body">
+    <Content />
+  </article>
+
+  <div class="article-end">
+    <div class="share-row">
+      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(`https://theaiduet.com/posts/${post.id}`)}`} target="_blank" class="share-btn">𝕏 Share</a>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://theaiduet.com/posts/${post.id}`)}`} target="_blank" class="share-btn">LinkedIn</a>
+      <a href={`https://wa.me/?text=${encodeURIComponent(post.data.title + ' https://theaiduet.com/posts/' + post.id)}`} target="_blank" class="share-btn">WhatsApp</a>
+    </div>
+    <a href="/posts" class="back-bottom">← All Field Notes</a>
+  </div>
+</Base>
+
+<style>
+  .article-header {
+    max-width: var(--prose-width); margin: 0 auto; padding: 60px 24px 0;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 500; color: var(--color-text-secondary);
+    text-decoration: none; margin-bottom: 32px; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--color-accent); opacity: 1; }
+  .article-tag {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--color-accent); margin-bottom: 16px; display: block;
+  }
+  .article-header h1 {
+    font-family: var(--font-display); font-size: 44px; font-weight: 400;
+    line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px;
+  }
+  .title-zh {
+    font-size: 18px; color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+  .article-desc {
+    font-size: 18px; line-height: 1.7; color: var(--color-text-secondary); margin-bottom: 32px;
+  }
+  .author-row {
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 32px; border-bottom: 1px solid var(--color-border);
+    margin-bottom: 32px; font-size: 14px; color: var(--color-text-secondary);
+  }
+  .author-row .name { font-weight: 600; color: var(--color-text); }
+
+  .article-body {
+    max-width: var(--prose-width); margin: 0 auto; padding: 0 24px 48px;
+  }
+  .article-body :global(p) { font-size: 17px; line-height: 1.85; margin-bottom: 24px; color: #1e293b; }
+  .article-body :global(h2) {
+    font-family: var(--font-display); font-size: 28px; font-weight: 400;
+    margin: 48px 0 20px; letter-spacing: -0.3px;
+  }
+  .article-body :global(h3) { font-size: 20px; font-weight: 600; margin: 36px 0 16px; }
+  .article-body :global(blockquote) {
+    border-left: 3px solid var(--color-accent); margin: 28px 0;
+    padding: 16px 24px; background: var(--color-accent-light); border-radius: 0 8px 8px 0;
+  }
+  .article-body :global(blockquote p) { margin-bottom: 0; color: var(--color-text); font-style: italic; font-size: 16px; }
+  .article-body :global(ul), .article-body :global(ol) {
+    font-size: 17px; line-height: 1.85; margin-bottom: 24px; padding-left: 28px; color: #1e293b;
+  }
+  .article-body :global(li) { margin-bottom: 8px; }
+  .article-body :global(a) { color: var(--color-accent); }
+  .article-body :global(strong) { font-weight: 700; color: var(--color-text); }
+  .article-body :global(em) { font-style: italic; }
+  .article-body :global(hr) { border: none; border-top: 1px solid var(--color-border); margin: 48px 0; }
+  .article-body :global(code) {
+    font-size: 0.88em; background: var(--color-tag-bg);
+    padding: 0.15em 0.35em; border-radius: 3px;
+  }
+
+  .article-end {
+    max-width: var(--prose-width); margin: 0 auto; padding: 0 24px 80px;
+  }
+  .share-row { display: flex; gap: 10px; margin-bottom: 40px; }
+  .share-btn {
+    padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    border: 1px solid var(--color-border); color: var(--color-text-secondary);
+    text-decoration: none; transition: all 0.2s;
+  }
+  .share-btn:hover { border-color: var(--color-accent); color: var(--color-accent); opacity: 1; }
+  .back-bottom { font-size: 14px; color: var(--color-text-secondary); text-decoration: none; }
+  .back-bottom:hover { color: var(--color-accent); opacity: 1; }
+
+  @media (max-width: 768px) {
+    .article-header h1 { font-size: 32px; }
+    .article-header, .article-body, .article-end { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
