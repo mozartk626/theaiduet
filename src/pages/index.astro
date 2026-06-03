@@ -11,29 +11,27 @@ function formatDate(date: Date) {
 ---
 
 <Base title="Home">
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-main">
       <div class="tagline">A content platform at the AI crossroads</div>
       <h1>Where Chinese AI<br>meets the <em>world</em></h1>
       <p class="hero-desc">
-        Singapore is where Chinese AI founders land first when going global — and where
-        American AI companies enter Asia. <strong>The AI Duet</strong> sits at this
-        intersection: capturing the conversations, strategies, and firsthand insights
-        from both sides.
+        Chinese AI founders are going global. American AI companies are entering
+        Asia. Singapore is where both sides land first. <strong>The AI Duet</strong>
+        sits at this intersection — with the access and perspective to tell the
+        stories that neither side sees on its own.
       </p>
     </div>
     <div class="hero-side">
       <div class="label">Behind this</div>
-      <p>I'm Ellen. I record conversations with Chinese AI founders in Singapore about their frontline experience going global — originally as <strong>离线时间</strong>, a Chinese-language podcast. This is the English window into that world.</p>
+      <p>I'm Ellen. I talk to Chinese AI founders in Singapore every week for my podcast <strong>离线时间</strong>. The AI Duet is where those insights — and my own analysis — reach an English-speaking audience.</p>
       <a href="/about" class="side-link">More about me →</a>
     </div>
   </section>
 
   <div class="divider"><hr></div>
 
-  <!-- Field Notes -->
-  <section class="field-notes">
+  <section class="articles">
     <div class="section-header">
       <div class="section-title">Latest</div>
       <a href="/posts" class="section-link">View all →</a>
@@ -45,7 +43,7 @@ function formatDate(date: Date) {
           <div>
             <div class="article-meta">
               <span class="article-type">
-                {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Field Note'}
+                {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Article'}
               </span>
               <span class="article-date">{formatDate(post.data.date)}</span>
             </div>
@@ -56,28 +54,6 @@ function formatDate(date: Date) {
           <div class="article-arrow">→</div>
         </a>
       ))}
-    </div>
-  </section>
-
-  <!-- Services Strip -->
-  <section class="services-strip">
-    <div class="services-inner">
-      <div class="services-intro">
-        <div class="label">Services</div>
-        <h2>For AI entrepreneurs<br>with global ambitions</h2>
-        <p>Whether you're raising capital or making your first move into a new market, I can help you navigate the landscape.</p>
-        <a href="mailto:ellen@theaiduet.com" class="services-cta">Get in touch →</a>
-      </div>
-      <div class="services-list">
-        <div class="service-item">
-          <h3>Fundraising</h3>
-          <p>Deal positioning, investor introductions, and narrative support for AI startups raising in Singapore, SEA, and global markets.</p>
-        </div>
-        <div class="service-item">
-          <h3>Landing Events & Growth Consulting</h3>
-          <p>Curated events that introduce your company to the right people, plus go-to-market strategy for entering new markets through Singapore.</p>
-        </div>
-      </div>
     </div>
   </section>
 </Base>
@@ -100,9 +76,7 @@ function formatDate(date: Date) {
   .hero-main h1 em { font-style: italic; color: var(--color-accent); }
   .hero-desc { font-size: 18px; line-height: 1.7; color: var(--color-text-secondary); max-width: 520px; }
   .hero-desc strong { color: var(--color-text); font-weight: 600; }
-  .hero-side {
-    border-left: 1px solid var(--color-border); padding-left: 40px;
-  }
+  .hero-side { border-left: 1px solid var(--color-border); padding-left: 40px; }
   .hero-side .label {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     letter-spacing: 0.1em; text-transform: uppercase;
@@ -119,7 +93,7 @@ function formatDate(date: Date) {
   .divider { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-page); }
   .divider hr { border: none; border-top: 1px solid var(--color-border); }
 
-  .field-notes { max-width: var(--max-width); margin: 0 auto; padding: 64px var(--spacing-page) 80px; }
+  .articles { max-width: var(--max-width); margin: 0 auto; padding: 64px var(--spacing-page) 80px; }
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px; }
   .section-title {
     font-family: var(--font-mono); font-size: 12px; font-weight: 500;
@@ -160,43 +134,14 @@ function formatDate(date: Date) {
   }
   .article-card:hover .article-arrow { color: var(--color-accent); transform: translateX(4px); }
 
-  .services-strip { background: var(--color-text); color: white; padding: 80px var(--spacing-page); margin-top: 20px; }
-  .services-inner {
-    max-width: var(--max-width); margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-  }
-  .services-intro .label {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px;
-  }
-  .services-intro h2 {
-    font-family: var(--font-display); font-size: 40px; font-weight: 400;
-    line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px;
-  }
-  .services-intro p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
-  .services-cta {
-    display: inline-block; padding: 14px 28px;
-    border: 1.5px solid rgba(255,255,255,0.25); border-radius: 6px;
-    color: white; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
-  }
-  .services-cta:hover { border-color: var(--color-accent); background: var(--color-accent); opacity: 1; }
-  .services-list { display: flex; flex-direction: column; justify-content: center; }
-  .service-item { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .service-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
-  .service-item h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
-  .service-item p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
-
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; gap: 48px; padding: 64px 20px 48px; }
     .hero-main h1 { font-size: 44px; letter-spacing: -1px; }
     .hero-side { border-left: none; border-top: 1px solid var(--color-border); padding-left: 0; padding-top: 32px; }
-    .field-notes { padding: 48px 20px 64px; }
+    .articles { padding: 48px 20px 64px; }
     .divider { padding: 0 20px; }
     .article-card { grid-template-columns: 1fr; gap: 0; }
     .article-card h3 { font-size: 22px; }
     .article-arrow { display: none; }
-    .services-strip { padding: 60px 20px; }
-    .services-inner { grid-template-columns: 1fr; gap: 48px; }
-    .services-intro h2 { font-size: 32px; }
   }
 </style>

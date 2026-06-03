@@ -10,10 +10,10 @@ function formatDate(date: Date) {
 }
 ---
 
-<Base title="Field Notes" description="Articles and insights about Chinese AI founders and companies going global.">
+<Base title="Articles" description="Articles and insights about Chinese AI founders and companies going global.">
   <section class="page">
     <div class="page-inner">
-      <div class="section-title">Field Notes</div>
+      <div class="section-title">Articles</div>
       <h1 class="page-title">All articles</h1>
       <p class="page-desc">
         Insights, profiles, and analysis from the Chinese AI ecosystem —
@@ -26,7 +26,7 @@ function formatDate(date: Date) {
             <div>
               <div class="article-meta">
                 <span class="article-type">
-                  {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Field Note'}
+                  {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Article'}
                 </span>
                 <span class="article-date">{formatDate(post.data.date)}</span>
               </div>

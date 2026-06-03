@@ -25,9 +25,9 @@ function formatDate(date: Date) {
   publishDate={post.data.date}
 >
   <div class="article-header">
-    <a href="/posts" class="back-link">← Field Notes</a>
+    <a href="/posts" class="back-link">← Articles</a>
     <span class="article-tag">
-      {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Field Note'}
+      {post.data.episode ? `🎙 ${post.data.episodeNumber || 'Podcast'}` : 'Article'}
       · {formatDate(post.data.date)}
     </span>
     <h1>{post.data.title}</h1>
@@ -48,7 +48,7 @@ function formatDate(date: Date) {
       <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://theaiduet.com/posts/${post.id}`)}`} target="_blank" class="share-btn">LinkedIn</a>
       <a href={`https://wa.me/?text=${encodeURIComponent(post.data.title + ' https://theaiduet.com/posts/' + post.id)}`} target="_blank" class="share-btn">WhatsApp</a>
     </div>
-    <a href="/posts" class="back-bottom">← All Field Notes</a>
+    <a href="/posts" class="back-bottom">← All Articles</a>
   </div>
 </Base>
 
