@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40">
+  <rect x="0" y="2" width="36" height="36" rx="6" fill="#D03030"/>
+  <text x="10" y="30" font-family="'DM Serif Display', Georgia, serif" font-size="24" font-weight="400" fill="#faf9f7" font-style="italic">D</text>
+  <text x="46" y="28" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="500" fill="#1a1a1a" letter-spacing="-0.3">The AI <tspan fill="#D03030">Duet</tspan></text>
+</svg>

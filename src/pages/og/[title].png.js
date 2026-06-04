@@ -61,7 +61,7 @@ export async function GET({ props }) {
                     style: {
                       fontSize: '18px',
                       fontWeight: 400,
-                      color: '#c4491a',
+                      color: '#D03030',
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
                     },
@@ -105,7 +105,7 @@ export async function GET({ props }) {
                     },
                     children: [
                       { type: 'span', props: { children: 'The AI ' } },
-                      { type: 'span', props: { style: { color: '#c4491a' }, children: 'Duet' } },
+                      { type: 'span', props: { style: { color: '#D03030' }, children: 'Duet' } },
                     ],
                   },
                 },
