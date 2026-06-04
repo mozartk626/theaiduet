@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Subscribe" description="Get new articles from The AI Duet delivered to your inbox. Insights from the intersection of Chinese AI and global markets.">
+  <section class="subscribe-page">
+    <div class="subscribe-inner">
+      <h1>Stay in the loop</h1>
+      <p class="subscribe-desc">
+        Get new articles delivered to your inbox — insights from the intersection
+        of Chinese AI and global markets. No spam, unsubscribe anytime.
+      </p>
+
+      <div class="substack-embed">
+        <iframe
+          src="https://theaiduet.substack.com/embed"
+          width="100%"
+          height="150"
+          style="border:none; background:transparent;"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
+
+      <p class="subscribe-alt">
+        Prefer RSS? <a href="/rss.xml">Here's the feed</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .subscribe-page {
+    padding: 100px var(--spacing-page) 120px;
+    display: flex; justify-content: center;
+  }
+  .subscribe-inner {
+    max-width: 480px; text-align: center;
+  }
+  .subscribe-inner h1 {
+    font-family: var(--font-display); font-size: 44px; font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .subscribe-desc {
+    font-size: 17px; line-height: 1.7; color: var(--color-text-secondary);
+    margin-bottom: 40px;
+  }
+  .substack-embed {
+    margin: 0 auto 32px;
+  }
+  .substack-embed iframe {
+    max-width: 100%;
+  }
+  .subscribe-alt {
+    font-size: 14px; color: var(--color-text-secondary);
+  }
+  .subscribe-alt a {
+    color: var(--color-accent); text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .subscribe-page { padding: 64px 20px 80px; }
+    .subscribe-inner h1 { font-size: 32px; }
+  }
+</style>
