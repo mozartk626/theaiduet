@@ -3,7 +3,7 @@ title: "The Case for Edge AI: From NIO's Data Center on Wheels to a Medical Devi
 description: "Hu Chenchen went from Tsinghua professor to Xilinx Asia CTO to NIO's chief expert to AI startup founder. His thesis: the last decade belonged to the cloud, but the next decade belongs to the edge. A medical AI device that costs 1/20th the power and 1/60th the volume just proved him right."
 date: 2026-05-18
 tags: ["edge-ai", "founders", "medical", "infrastructure"]
-episodeNumber: "EP09 + EP12"
+episodeNumber: "EP10 + EP12"
 episode: "https://www.xiaoyuzhoufm.com/episode/PLACEHOLDER"
 ---
 
@@ -73,4 +73,4 @@ The question for the broader AI ecosystem is whether this pattern — compressin
 
 ---
 
-*This article draws from 离线时间 EP09 (Hu Chenchen's full career conversation) and EP12 (the "在场" special edition featuring the medical device launch). [Listen in Chinese →](https://www.xiaoyuzhoufm.com/episode/PLACEHOLDER)*
+*This article draws from 离线时间 EP10 (Hu Chenchen's full career conversation) and EP12 (the "在场" special edition featuring the medical device launch). 
