@@ -10,7 +10,7 @@ date: 2026-07-15
 episode: ""
 episodeNumber: EP15
 featured: false
-draft: true
+draft: false
 ---
 Aria Wang didn't choose the food industry. It chose her twice — first when she graduated and took a job at ADM, one of the four largest agricultural trading companies in the world, and again after INSEAD, when the offer she took was in the same sector.
 
