@@ -9,7 +9,7 @@ description: Chris Liu was a product manager at Weibo and Alipay, then a
   China.
 date: 2026-07-20
 featured: false
-draft: true
+draft: false
 ---
 Every conversation about Chinese AI companies going global is a conversation about the United States. Which is exactly why almost nobody noticed what's happening in Australia.
 
