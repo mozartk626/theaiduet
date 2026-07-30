@@ -1,10 +1,18 @@
 ---
-title: "He Built Asia's Largest Startup Accelerator at Huawei. Now He's Replacing the SDR."
-description: "Leo Jiang went from BT and Vodafone to building Huawei's Spark program — 7,000+ startup applications across five continents. Then he left to build an AI sales agent. On why outbound sales is the perfect AI use case, why SaaS is ending, and why the future is agent-to-agent commerce."
+title: He Built Asia's Largest Startup Accelerator at Huawei. Now He's Replacing
+  the SDR.
+description: Leo Jiang went from BT and Vodafone to building Huawei's Spark
+  program — 7,000+ startup applications across five continents. Then he left to
+  build an AI sales agent. On why outbound sales is the perfect AI use case, why
+  SaaS is ending, and why the future is agent-to-agent commerce.
 date: 2026-05-25
-tags: ["founders", "huawei", "sales-agent", "B2B"]
-episodeNumber: "EP10"
-episode: "https://www.xiaoyuzhoufm.com/episode/PLACEHOLDER"
+tags:
+  - founders
+  - huawei
+  - sales-agent
+  - B2B
+episode: https://www.xiaoyuzhoufm.com/episode/PLACEHOLDER
+episodeNumber: EP9
 ---
 
 Leo Jiang spent his career at the intersection of large enterprises and the outside world: BT, Orange, Vodafone — senior positions across Asia, always in consulting and innovation. Then he joined Huawei.
