@@ -128,4 +128,4 @@ I'd put it slightly less certainly than he does. The Big Four have distribution 
 
 What's already clear is narrower and more useful: the model works, it wasn't invented in a batch, and the customers pulled it into existence before the founders had a name for it.
 
-*This article is adapted from AI for Beautiful Business EP01, a conversation with YG (CapGo AI) and Mao Hua (ccMonet AI).*
+*This article is adapted from 离线时间 EP20., a conversation with YG (CapGo AI) and Mao Hua (ccMonet AI).*
