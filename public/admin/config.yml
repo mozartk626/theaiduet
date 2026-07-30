@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: mozartk626/theaiduet
+  branch: main
+  base_url: https://decap.theaiduet.com
+  auth_endpoint: auth
+
+site_url: https://theaiduet.com
+display_url: https://theaiduet.com
+logo_url: /logo.svg
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: posts
+    label: Field Notes
+    label_singular: Article
+    folder: src/content/posts
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title]
+    view_groups:
+      - label: Draft status
+        field: draft
+    fields:
+      - { label: Title (EN), name: title, widget: string, hint: 'Main headline, English' }
+      - { label: Title (中文, optional), name: titleZh, widget: string, required: false }
+      - { label: Description / SEO summary, name: description, widget: text, hint: 'One sentence, shows in previews and search results' }
+      - { label: Publish date, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Tags, name: tags, widget: list, required: false, hint: 'e.g. founders, strategy, go-to-market' }
+      - { label: Podcast episode link, name: episode, widget: string, required: false, hint: 'e.g. https://www.xiaoyuzhoufm.com/episode/ID' }
+      - { label: Episode number, name: episodeNumber, widget: string, required: false, hint: 'e.g. EP19' }
+      - { label: Featured on homepage, name: featured, widget: boolean, required: false, default: false }
+      - { label: Draft (hide from live site), name: draft, widget: boolean, required: false, default: true }
+      - { label: Body, name: body, widget: markdown }
